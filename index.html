@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loan Calculator</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Loan Calculator">
+  <meta name="author" content="Patrick Berry">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="C:/Users/patrick.berry/Documents/R/win-library/3.1/slidifyLibraries/libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="C:/Users/patrick.berry/Documents/R/win-library/3.1/slidifyLibraries/libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="C:/Users/patrick.berry/Documents/R/win-library/3.1/slidifyLibraries/libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="C:/Users/patrick.berry/Documents/R/win-library/3.1/slidifyLibraries/libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="C:/Users/patrick.berry/Documents/R/win-library/3.1/slidifyLibraries/libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="C:/Users/patrick.berry/Documents/R/win-library/3.1/slidifyLibraries/libraries/frameworks/io2012/js/slides" 
+    src="C:/Users/patrick.berry/Documents/R/win-library/3.1/slidifyLibraries/libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Loan Calculator</h1>
+    <h2></h2>
+    <p>Patrick Berry<br/>Coursera - Developing Data Products Project</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>The questions</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Do you need a new house?</li>
+<li>Do you need a new car?</li>
+<li>How much can you afford to borrow?</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>How much can you borrow</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Common style of loan in Australia is principle and interest</li>
+<li>How can you determine the loans size that you are able to borrow?</li>
+<li>How can you determine the impact if future changes in interest rates?</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>The application</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>This application calculates principle and interest payments for a loan given the following inputs
+
+<ul>
+<li>Loan inital value</li>
+<li>Loan term</li>
+<li>Interst rate</li>
+<li>Payment frequency</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>The calculations</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The loan repayment is calculated as follows,</p>
+
+<pre><code class="r">    pv &lt;- 250000            # inital loan value
+    n  &lt;- 20 * 12           # number of periods 20 years, monthly payments
+    r  &lt;- 4.5 / 100 / 12    # rate per period, 4.5%
+
+    # Payment per period
+    p &lt;- (r * pv) / ( 1 - (1 + r)^-n)
+    p
+</code></pre>
+
+<pre><code>## [1] 1581.623
+</code></pre>
+
+<p>In this example a loan of 250,000 at 4.5% with monthly repayments over a 20 year will require fixed monthly payments of 1581.6234405.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Dislaimer</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>This application will calculate repayments only and dosn&#39;t predict affordability</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='The questions'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='How much can you borrow'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='The application'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='The calculations'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Dislaimer'>
+         5
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="C:/Users/patrick.berry/Documents/R/win-library/3.1/slidifyLibraries/libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
